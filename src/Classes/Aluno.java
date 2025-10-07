@@ -83,4 +83,17 @@ public class Aluno {
         this.nivel = nivel;
     }
 
+    public boolean verificarPresenca(String[] registros, String nomeAluno) {
+        if (registros == null || nomeAluno == null || nomeAluno.isEmpty()) {
+            throw new IllegalArgumentException("Parâmetros inválidos");
+        }
+
+        for (String registro : registros) {
+            if (registro.equalsIgnoreCase(nomeAluno)) {
+                return true; // o aluno está presente
+            }
+        }
+        return false; // o aluno não está presente
+    }
+
 }
